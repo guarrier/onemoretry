@@ -33,31 +33,14 @@
             text-align: center;
         }
 
-        #countdown {
+        #mines-out {
             font-family: 'CustomFont', Arial, sans-serif;
             background-color: rgba(0, 0, 0, 0.5);
             color: #d7cfc7;
-            font-size: 2em;
+            font-size: 4em; /* Increased font size */
             padding: 20px;
             border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .time-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .time-label {
-            font-size: 0.8em;
-            margin-bottom: 10px;
-        }
-
-        .time-value {
-            font-size: 1.5em;
+            text-align: center;
         }
 
         #hi-text {
@@ -71,24 +54,9 @@
 </head>
 <body>
     <div id="title">Floor 2 Countdown</div>
-    <div id="countdown">
-        <div class="time-unit">
-            <div class="time-label">Day</div>
-            <div id="days" class="time-value">0</div>
-        </div>
-        <div class="time-unit">
-            <div class="time-label">Hour</div>
-            <div id="hours" class="time-value">0</div>
-        </div>
-        <div class="time-unit">
-            <div class="time-label">Minute</div>
-            <div id="minutes" class="time-value">0</div>
-        </div>
-        <div class="time-unit">
-            <div class="time-label">Second</div>
-            <div id="seconds" class="time-value">0</div>
-        </div>
-    </div>
+
+    <!-- Replace countdown with the desired text -->
+    <div id="mines-out">THE MINES ARE OUT</div>
 
     <div id="hi-text">this is not official credits to @LSPLASH</div>
 
@@ -134,30 +102,6 @@
         }
 
         setInterval(changeBackgroundImage, 7000); // Change image every 7 seconds
-
-        function updateCountdown() {
-            const now = new Date();
-            const eventDate = new Date('August 30, 2024 00:00:00');
-            const currentTime = now.getTime();
-            const eventTime = eventDate.getTime();
-            const remainingTime = eventTime - currentTime;
-
-            const seconds = Math.floor(remainingTime / 1000);
-            const minutes = Math.floor(seconds / 60);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-
-            const remainingSeconds = seconds % 60;
-            const remainingMinutes = minutes % 60;
-            const remainingHours = hours % 24;
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = remainingHours;
-            document.getElementById('minutes').textContent = remainingMinutes;
-            document.getElementById('seconds').textContent = remainingSeconds;
-        }
-
-        setInterval(updateCountdown, 1000);
 
         // Initialize background image
         changeBackgroundImage();
