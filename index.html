@@ -22,7 +22,7 @@
             background-position: center center;
             background-repeat: no-repeat;
             transition: background-image 1s ease-in-out;
-            position: relative; /* Make sure the body is the positioning context */
+            position: relative;
         }
 
         #title {
@@ -37,7 +37,7 @@
             font-family: 'CustomFont', Arial, sans-serif;
             background-color: rgba(0, 0, 0, 0.5);
             color: #d7cfc7;
-            font-size: 4em; /* Increased font size */
+            font-size: 4em;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -48,14 +48,13 @@
             color: #d7cfc7;
             font-size: 1.5em;
             text-align: center;
-            margin-top: 20px; /* Adjust this value to move the text further down */
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div id="title">Floor 2 Countdown</div>
 
-    <!-- Replace countdown with the desired text -->
     <div id="mines-out">THE MINES ARE OUT</div>
 
     <div id="hi-text">this is not official credits to @LSPLASH</div>
@@ -79,9 +78,8 @@
             currentImageIndex = (currentImageIndex + 1) % images.length;
         }
 
-        setInterval(changeBackgroundImage, 7000); // Change image every 7 seconds
+        setInterval(changeBackgroundImage, 7000);
 
-        // Initialize background image
         changeBackgroundImage();
     </script>
 </body>
