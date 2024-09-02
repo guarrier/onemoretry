@@ -61,29 +61,7 @@
     <div id="hi-text">this is not official credits to @LSPLASH</div>
 
     <script>
-        let audioContext, gainNode, sourceNode;
-
-        function startAudio() {
-            if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                gainNode = audioContext.createGain();
-                sourceNode = audioContext.createBufferSource();
-
-                fetch('clock.mp3')
-                    .then(response => response.arrayBuffer())
-                    .then(data => audioContext.decodeAudioData(data))
-                    .then(buffer => {
-                        sourceNode.buffer = buffer;
-                        sourceNode.loop = true;
-                        sourceNode.connect(gainNode);
-                        gainNode.connect(audioContext.destination);
-                        sourceNode.start(0);
-                    })
-                    .catch(error => console.error('Error loading audio:', error));
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', startAudio);
+        
 
         const images = [
             '/photo.png',
